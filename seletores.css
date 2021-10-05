@@ -1,0 +1,329 @@
+/* 
+
+**Element Selector**
+
+HTML
+
+<h1>Título da página</h1>
+<p>Conteúdo da minha página</p>
+
+CSS          */
+
+h1 {
+  color: blue;
+  font-size: 60px;
+}
+
+p {
+  color: green;
+}
+
+/* 
+
+**ID Selector**
+
+1 - Um elemento que tenha um atributo id
+2 - Cada id deverá ser único
+3 - Usa-se # para indicar um ID selector
+
+HTML
+
+<h1 id="title">Título da página</h1>
+<p id="content">Conteúdo da minha página</p>
+
+CSS      */
+
+#title {
+  color: yellow;
+}
+
+#content {
+  color: orange;
+}
+
+/*
+
+**Class Selector**
+
+Os elementos com atributo class
+Podemos ter uma ou mais classes
+Usa-se . para indicar um class selector
+Todos os elementos com a mesma class são alterados
+
+HTML
+
+<h1 class="red big">Título da página</h1>
+<p class="red big">Conteúdo da minha página</p>
+
+CSS        */
+
+.red {
+  color: red;
+}
+
+.big {
+  font-size: 3em;
+}
+
+/*
+  
+  **Attribute Selector**
+
+Um elemento que tenha um atributo específico
+
+HTML
+
+<h1 title="Algum titlulo">Título da página</h1>
+<p title="Conteúdo da página">Conteúdo da minha página</p>
+
+CSS           */
+
+[title] {
+  color: orange;
+}
+
+/*
+
+**Pseudo-class Selector**
+
+Elementos em um estado específico
+
+HTML
+
+<h1 class="red big">Título da página</h1>
+<p class="red big">Conteúdo da minha página</p>
+
+CSS       */
+
+p:hover {
+  color: red;
+}
+
+h1:hover {
+  color: red;
+}
+
+/*
+
+Múltiplos
+É possível selecionar múltiplos elementos e aplicar alguma regra CSS para todos eles.
+
+Usamos uma separação por vírgulas para isso:
+
+*/
+
+h1,
+p,
+.title,
+.title:hover {
+  color: red;
+}
+
+/*
+          Child combinator
+
+1 - Identificado pelo sinal > entre dois seletores
+2 - seleciona somente o elemento que é filho direto do pai
+3 - Elementos depois do filho direto serão desconsiderados
+
+HTML
+
+<body>
+  <ul>
+    <li>Item 1</li>
+    <ul>
+      <li>Item 2</li>
+    </ul>
+  </ul>
+</body>
+
+CSS        */
+
+body > ul > li {
+  color: blue;
+}
+
+/*
+       Adjacent sibling combinator
+
+1 - Identificado pelo sinal + entre dois seletores
+2 - Seleciona somente o elemento do lado direito que é irmão direto na hierarquia
+
+HTML
+
+<h1>
+  Título
+</h1>
+<p>
+  Esse é um parágrafo
+</p>
+<p>
+  Mais um parágrafo
+</p>
+
+CSS      */
+
+h1 + p {
+  color: red;
+}
+
+/* 
+
+      General sibling combinator
+
+1 - Identificado pelo sinal ~ entre dois seletores
+2 - Seleciona todos os elementos irmãos
+
+HTML
+
+<h1>
+  Título
+</h1>
+<p>
+  Esse é um parágrafo
+</p>
+<p>
+  Mais um parágrafo
+</p>
+
+CSS    */
+
+h1 ~ p {
+  color: red;
+}
+
+/*
+
+:first-child
+
+É quando queremos selecionar o primeiro filho de um grupo de elementos.
+
+HTML
+
+<ul>
+  <li>Gratidão</li>
+  <li>Esperança</li>
+  <li>Fé</li>
+</ul>
+
+CSS */
+
+ul li:first-child {
+  font-weight: bold;
+}
+
+/*
+
+:nth-of-type()
+Pega o elemento por tipo e posição
+
+HTML
+
+<ul>
+  <h3>Palavras bonitas</h3>
+  <li>Gratidão</li>
+  <li>Esperança</li>
+  <li>Fé</li>
+</ul>
+
+CSS       */
+
+ul li:nth-of-type(1) {
+  font-weight: bold;
+}
+
+/*
+
+:nth-child()
+
+É quando queremos selecionar o primeiro filho de um grupo de elementos.
+
+HTML
+
+<ul>
+	<h3>Palavras bonitas</h3>
+  <li>Gratidão</li>
+  <li>Esperança</li>
+  <li>Fé</li>
+</ul>
+
+CSS      */
+
+ul li:nth-child(2) {
+  font-weight: bold;
+}
+
+/*
+
+:nth-child(odd) e :nth-child(even)
+even - números pares
+odd - números ímpares
+
+HTML
+
+<ul>
+  <li>Gratidão</li>
+  <li>Esperança</li>
+  <li>Fé</li>
+  <li>Liberdade</li>
+</ul>
+
+CSS    */
+
+ul li:nth-child(odd) {
+  color: gray;
+}
+
+/*
+
+hover e focus
+
+Ações do usuário
+Algumas estilos só são aplicados quando o usuário faz alguma ação na página.
+
+:hover    */
+
+a:hover {
+  color: red;
+}
+
+/*Vai mudar a cor do link para vermelho quando o usuário passar o mouse sobre o link */
+
+/*
+
+
+:focus é aplicado quando o elemento recebe o foco da ação do usuário que pode ser feita utilizando o teclado ou clicando no elemento com o mouse. É comumente usado em campos de input como uma forma de mostrar qual o input "ativo". */
+
+input:focus {
+  border-color: red;
+}
+
+/*
+
+Atributos
+:disabled
+
+HTML
+
+<input type="text" disabled>
+
+CSS   */
+
+input:disabled {
+  background-color: green;
+}
+
+/*
+
+:required
+
+HTML
+
+<input type="text" required>
+
+
+CSS    */
+
+input:required {
+  background-color: red;
+}
